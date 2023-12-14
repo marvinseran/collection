@@ -1,0 +1,183 @@
+$mobile: 375px;
+$desktop: 1400px;
+
+
+@mixin media-maxwidth($screensize) {
+    @media (max-width:$screensize) {
+        @content;
+    }
+}
+
+@mixin media-minwidth($screensize) {
+    @media (min-width:$screensize) {
+        @content;
+    }
+}
+
+* {
+    //outline: solid green;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .boxtitle {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 25px;
+        padding: 10px;
+        max-height: 200px;
+        overflow: hidden;
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+
+            @include media-maxwidth ($mobile) {
+                width: auto;
+                height: auto;
+                margin: 2%;
+                font-size: 16px;
+            }
+
+        }
+
+
+    }
+}
+
+.imagetop {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    margin-right: -10%;
+    transition: transform .2s;
+}
+
+
+.desctitle {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 10%;
+
+    &__p {
+        font-family: 'Barlow', sans-serif;
+        margin-top: -2%;
+        font-size: 18px;
+
+        @include media-maxwidth ($mobile) {
+            width: auto;
+            height: auto;
+            margin: 2%;
+            font-size: 10px;
+        }
+    }
+}
+
+
+.imagetop:hover {
+    transform: scale(1.1);
+}
+
+.boxarticle {
+    width: 100%;
+}
+
+.box1,
+.box2 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    font-family: 'Barlow', sans-serif;
+
+    @include media-maxwidth ($mobile) {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+}
+
+.card {
+    width: 100%;
+    border-radius: 20px;
+    margin: 0.6%;
+    overflow: auto;
+    box-shadow: 5px 3px 3px grey;
+    background-color: white;
+    transition: transform .2s;
+
+    @include media-maxwidth ($mobile) {
+        width: auto;
+        height: auto;
+        margin: 2%;
+    }
+
+    &__name {
+        font-family: 'Fraunces', serif;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+
+    }
+
+    &__creator {
+        text-align: center;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+    &__releaseyear {
+        text-align: center;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+    &__genre {
+        text-align: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 45%;
+    }
+
+    &__desc {
+        font-size: 15px;
+        text-align: justify;
+        margin-top: 5%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+}
+
+.cardlink-icon {
+    width: 10%;
+    height: auto;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
