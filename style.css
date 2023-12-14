@@ -149,4 +149,10 @@ header .boxtitle h1 {
 
 .card:hover {
   transform: scale(1.1);
+}
+
+.cardlink-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
